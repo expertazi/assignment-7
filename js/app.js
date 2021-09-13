@@ -103,16 +103,6 @@ const updateTotal = () => {
   document.getElementById("total").innerText = finalGrandTotal;
 };
 
-//grandTotal update function
-// const updateTotal = () => {
-//   const grandTotal =
-//     getInputValue("price") +
-//     getInputValue("delivery-charge") +
-//     getInputValue("total-tax");
-//   const finalGrandTotal = grandTotal.toFixed(2);
-//   document.getElementById("total").innerText = finalGrandTotal;
-// };
-
 // Details Button Here
 
 let detailsBtn = (products) => {
@@ -125,8 +115,8 @@ let detailsBtn = (products) => {
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-    <h3>Thank You are Working On this </h3>
-    <h3>Please Check Again Later </h3>
+    <h3>Please Check Again Later.We will Update it soon </h3>
+    <h3> Thank You</h3>
     </div>
     <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
