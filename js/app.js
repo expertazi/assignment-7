@@ -1,5 +1,5 @@
-const loadProducts = () => {
-  const data = [
+let loadProducts = () => {
+  let data = [
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -231,9 +231,9 @@ const showProducts = (products) => {
                           </div>
                           <div class="card-footer">
                             <h3>Price: $ ${product.price}</h3>
-                            <p><i class="fas fa-star"></i> ${product.rating.rate} rated by ${product.rating.count} people</p>
+                            <p><i class="fas fa-star"></i>Avarage Rating: ${product.rating.rate} rated by ${product.rating.count} People</p>
                             <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-dark">add to cart</button>
-                            <button id="details-btn" class="btn btn-success">Details</button>
+                            <button onclick="detailsBtn()" data-bs-toggle="modal" data-bs-target="#exampleModal" id="details-btn" class="btn btn-success">Details</button>
                           </div>
                       </div>
     
@@ -298,3 +298,51 @@ const updateTotal = () => {
   document.getElementById("total").innerText = finalGrandTotal;
 };
 loadProducts();
+
+let detailsBtn = (products) => {
+  const takeModal = document.querySelector(".modal-content");
+
+  takeModal.innerHTML = `
+  <div class="modal-content">
+  <div class="modal-header">
+  <h2>Products Details</h2>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+  <h3>Thank You are Working On this </h3>
+  <h3>Please Check Again Later </h3>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  </div>
+  </div>
+  `;
+  document.querySelector(".modal-content").appendChild(takeModal);
+
+  // const allProducts = products.map((pd) => pd);
+  // console.log(allProducts);
+  // console.log(loadProducts);
+
+  //   const detailsBtn = (product) => {
+  //     const takeModal = document.querySelector(".modal-content");
+
+  //     takeModal.innerHTML = `
+  // <div class="modal-content">
+  // <div class="modal-header">
+  // <img class="product-image img-fluid" src=${image}></img>
+  // <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  // </div>
+  // <div class="modal-body">
+  // <h3 class="card-title">${product.title}</h3>
+  // <p>Category: ${product.category}</p>
+  // <h3>Price: $ ${product.price}</h3>
+  // <p><i class="fas fa-star"></i>Avarage Rating: ${product.rating.rate} rated by ${product.rating.count} People</p>
+  // </div>
+  // <div class="modal-footer">
+  // <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  // </div>
+  // </div>
+  // `;
+  //     document.querySelector(".modal-content").appendChild(takeModal);
+  //   };
+};
