@@ -1,7 +1,7 @@
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
-  background-color: #e4e5e9 !important;
+  background-color: #f4f7fd !important;
 }
 
 #all-products {
@@ -60,6 +60,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btn-color {
+  background-color: #1f487e !important;
 }
 .card-body {
   padding-bottom: 0 !important;

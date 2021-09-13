@@ -29,7 +29,7 @@ const showProducts = (products) => {
                               <h3>Price: $ ${product.price}</h3>
                               <p><i class="fas fa-star"></i>Avarage Rating: ${product.rating.rate} rated by ${product.rating.count} People</p>
                               <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-dark">add to cart</button>
-                              <button onclick="detailsBtn()" data-bs-toggle="modal" data-bs-target="#exampleModal" id="details-btn" class="btn btn-success">Details</button>
+                              <button onclick="detailsBtn()" data-bs-toggle="modal" data-bs-target="#exampleModal" id="details-btn" class="btn btn-color btn-success">See Full Details</button>
                             </div>
                         </div>
       
@@ -107,23 +107,24 @@ const updateTotal = () => {
 
 let detailsBtn = (products) => {
   const takeModal = document.querySelector(".modal-content");
+  const div = document.createElement("div");
 
-  takeModal.innerHTML = `
-    <div class="modal-content">
+  div.innerHTML = `
+
     <div class="modal-header">
     <h2>Products Details</h2>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
     <h3>Please Check Again Later.We will Update it soon </h3>
-    <h3> Thank You</h3>
+    <h5> Thank You</h5>
     </div>
     <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     </div>
-    </div>
+
     `;
-  takeModal.appendChild(takeModal);
+  takeModal.appendChild(div);
 };
 
 // const allProducts = products.map((pd) => pd);
